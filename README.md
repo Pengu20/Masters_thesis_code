@@ -1,25 +1,20 @@
+# Adversarial Inverse Reinforcement learning for Cloth manipulation
+
 This is a cleaned version of the code used for my masters thesis project on Adversarial Inverse Reinforcement Learning within the field of cloth manipulation
 
-this repository holds:
+## Repository contains:
+- AIRL implementation
+- PPO implementation
 
-The orignal code used for training Adversarial Inverse Reinforcement Learning,
+Along with the methods documented in the thesis, other experimental methods in this thesis also include
+- GAIL implementation (Not sure if works anymore)
+- Imitation Initalized Learning
+- Circle of Learning loss within AIRL (based on Negative Gaussian Log Likelihood)
 
-A PPO implementation used in conjunction with Adversarial Learning. 
+The experimental methods are all disabled in the current version of the github repository.
 
-
-The Github Repository code was implemented based on the following github repositories.
-
-- Mujoco environment design
-https://gitlab.sdu.dk/sdurobotics/teaching/mj_sim
-
-
-- PPO inspired implementation 
-https://github.com/reinforcement-learning-kr/lets-do-irl
-
-
-- AIRL repo
-https://github.com/toshikwa/gail-airl-ppo.pytorch
-
+All method implementations are used within the file:
+- mj_sim/learning/airl_UR/main_airl.py
 
 
 
@@ -33,6 +28,19 @@ This repository also consists of expert demonstrations and MuJoCo environments f
 
 4 DOF - underactuated object manipulation
 
+
+
+# Code sources
+- Mujoco environment design
+https://gitlab.sdu.dk/sdurobotics/teaching/mj_sim
+
+
+- PPO inspired implementation 
+https://github.com/reinforcement-learning-kr/lets-do-irl
+
+
+- AIRL repo
+https://github.com/toshikwa/gail-airl-ppo.pytorch
 
 
 
