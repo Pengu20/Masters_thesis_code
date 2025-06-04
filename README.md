@@ -12,7 +12,7 @@ $ pip install -r requirements.txt
 
 
 ### Run AIRL with PPO 
-$ python -m learning.airl_UR.main_AIRL
+$ python -m learning.airl_UR.main_airl
 
 _Modify learning.airl_UR.main_AIRL.py to try alterations of of the code_
 
