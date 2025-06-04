@@ -2,6 +2,22 @@
 
 This is a cleaned version of the code used for my masters thesis project on Adversarial Inverse Reinforcement Learning within the field of cloth manipulation
 
+## Guide:
+
+### setup virtual environment (optional)
+$ python -m venv venv
+
+### install requirements
+$ pip install -r requirements.txt
+
+
+### Run AIRL with PPO 
+$ python -m learning.airl_UR.main_AIRL
+
+_Modify learning.airl_UR.main_AIRL.py to try alterations of of the code_
+
+
+
 ## Repository contains:
 - AIRL implementation
 - PPO implementation
