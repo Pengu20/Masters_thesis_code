@@ -37,16 +37,16 @@ This repository also consists of expert demonstrations and MuJoCo environments f
 - next state
 
 1 DOF - underactuated manipulation expert demonstration
-[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/thumbnails/cloth_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/F1_expert.mp4)
+[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/thumbnails/cloth_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/F1_expert.mp4)
 
 2 DOF - underactuated manipulation expert demonstration
-[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/thumbnails/1DOF_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/F2_expert.mp4)
+[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/thumbnails/1DOF_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/F2_expert.mp4)
 
 4 DOF - underactuated manipulation expert demonstration
-[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/thumbnails/1DOF_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/F3_expert.mp4)
+[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/thumbnails/1DOF_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/F3_expert.mp4)
 
 cloth manipulation expert demonstration
-[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/thumbnails/1DOF_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/cloth_expert.mp4)
+[![Watch the video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/thumbnails/1DOF_expert.png)](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/blob/main/mj_sim/Expert_demonstrations/mp4/cloth_expert.mp4)
 
 
 # Code sources
