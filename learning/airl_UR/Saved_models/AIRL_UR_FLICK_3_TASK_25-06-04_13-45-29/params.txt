@@ -1,0 +1,35 @@
+ ------- RL agent settings -------
+hidden_size: 128
+learning_rate: 1e-05
+entropy_gain_PPO: 0.001
+critic_gain_PPO: 1
+actor_critic_update_num: 20
+PPO max_grad_norm: 10
+PPO_batch size: 256
+PPO gamma: 0.99
+PPO lambda: 0.85
+PPO weight decay: 0.001
+off_policy_data_size: 3400
+agent_disabled: False
+expert_demonstration: False
+hidden_layer_nodes_r: (256, 256, 256)
+hidden_layer_nodes_v: (256, 256, 256)
+airl_learning_rate: 0.0003
+airl_epocs: 5
+airl gamma: 0.99
+airl reward NN: : (256, 256, 256)
+AIRL_L2_weight_decay: 0.1
+Expert_mini_batch: 256
+discriminator_delay_value: 20
+
+ ------- General training settings -------
+Train_With_AIRL: True
+training_discriminator: True
+training_RL: True
+env_render_mode: human
+model_path: None
+model_candidate: latest
+disc_model_path: None
+disc_model_candidat: latest
+BC model_path: : None
+BC_disc_path: : None
