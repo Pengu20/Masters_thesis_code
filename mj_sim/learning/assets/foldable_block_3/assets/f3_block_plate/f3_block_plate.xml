@@ -1,0 +1,31 @@
+<mujoco model="f3_block_plate">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="Steel_-_Satin" specular="0.5" shininess="0.5" rgba="0.627451 0.627451 0.627451 1.0"/>
+    <mesh file="f3_block_plate.obj"/>
+    <mesh file="f3_block_plate_collision_0.obj"/>
+    <mesh file="f3_block_plate_collision_1.obj"/>
+    <mesh file="f3_block_plate_collision_2.obj"/>
+    <mesh file="f3_block_plate_collision_3.obj"/>
+    <mesh file="f3_block_plate_collision_4.obj"/>
+    <mesh file="f3_block_plate_collision_5.obj"/>
+  </asset>
+  <worldbody>
+    <body name="f3_block_plate">
+      <geom material="Steel_-_Satin" mesh="f3_block_plate" class="visual"/>
+      <geom mesh="f3_block_plate_collision_0" rgba="0.9077124507387407 0.29377895798884013 0.5436700963284631 1" class="collision"/>
+      <geom mesh="f3_block_plate_collision_1" rgba="0.24642417137362682 0.07594623860513072 0.9020027839853094 1" class="collision"/>
+      <geom mesh="f3_block_plate_collision_2" rgba="0.8769477598640406 0.584691402266475 0.24918232798303874 1" class="collision"/>
+      <geom mesh="f3_block_plate_collision_3" rgba="0.8554832965088291 0.260519618042632 0.8279532148144052 1" class="collision"/>
+      <geom mesh="f3_block_plate_collision_4" rgba="0.9320675950430862 0.29361683331628186 0.08420302536934521 1" class="collision"/>
+      <geom mesh="f3_block_plate_collision_5" rgba="0.16398313908284667 0.46047024653235913 0.637934623197355 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

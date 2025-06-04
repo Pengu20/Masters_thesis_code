@@ -1,0 +1,9 @@
+
+
+<mujocoinclude>
+	<worldbody>
+		<body name="flexcell_top">
+			<geom name="flexcell_top" type="box" size="0.6 0.4 0.025" pos="0.6 0.4 0.025" solref="0.000001 1" />
+		</body>
+	</worldbody>
+</mujocoinclude>

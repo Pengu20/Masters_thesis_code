@@ -1,0 +1,11 @@
+
+
+<mujocoinclude>
+	<worldbody>
+		<body name="flange_tool">
+			<site name="flange_tool" pos="0 0 -0.01" />
+			<geom name="flange_tool_base" mass="0.5" type="cylinder" size="0.032 0.01"  rgba="0.2 0.2 0.2 1" />
+			<geom name="flange_tool_tip"  mass="0.5" type="cylinder" size="0.015 0.05"   rgba="0.2 0.2 0.2 1"  pos="0 0 0.05"/>
+		</body>
+	</worldbody>
+</mujocoinclude>

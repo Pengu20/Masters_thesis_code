@@ -1,0 +1,65 @@
+
+
+GENERAL CONCLUSION:
+
+    Reward fucntion should be log(D) - Log(1 - D) for transfer learning tasks, and -Log(1 - D) for training the reward function.
+
+    The initial pose bias is a huge factor in the training of the reward function, and should be taken into account when training the reward function. (Probably fix this issue by making the position action relative to its current position.)
+
+
+Test 1: AIRL_UR_FLICK_TASK_25-03-05_12-25-54
+    
+    SUMMARY:
+            This test is too see the general convergence of the static AIRL reward function used to train the successfull RL agent.
+
+    RESULTS:
+            The convergence is not even close to finish, it seems that the initial pose bias is largely impacting the policy, cannot determine yet.
+            Though the policy does show signs of learning a very peculiar policy that closes the block in the end, but it is not consistent.
+
+    
+
+test 2: AIRL_UR_FLICK_TASK_25-03-05_12-25-54
+    
+        SUMMARY:
+                This test is to see if the blocks could learn in a transfer policy environment
+    
+        RESULTS:
+                It sucked ass, initial starting pose bias was enormous.
+
+
+
+
+
+
+test 3: AIRL_UR_FLICK_TASK_25-03-05_14-24-45 / AIRL_UR_FLICK_TASK_25-03-05_14-27-45 / AIRL_UR_FLICK_TASK_25-03-05_14-28-13
+
+        SUMMARY:
+                This test is too see if the reward function could be generated with 256 nodes on discriminator instead of 512.
+                three tests was run simultaneously.
+    
+        RESULTS:
+                They all where shit, seems as if they where largely inhibited by starting pose bias.
+
+
+
+
+test 4: AIRL_UR_FLICK_TASK_25-03-05_15-12-30 / AIRL_UR_FLICK_TASK_25-03-05_15-13-55 / AIRL_UR_FLICK_TASK_25-03-05_15-14-06
+
+        SUMMARY:
+                This test is to see if the log(D) - Log(1 - D) reward function worked better than the -Log(1 - D) reward function that usually is used
+    
+        RESULTS:
+                The mathematical difference between the two, is that "log(D) - Log(1 - D)" goes from -infinity to infinity. while "-Log(1 - D)" goes from 0 to infinity. It seems as it quickly learns a rather odd policy that solves the task with "log(D) - Log(1 - D)". It seems as if the negative infinity punishment is a very good motivator for the agent to learn something very quickly, instead of flatlining around 0, until a policy is learned that closely resembles the agent.
+
+                log(D) - Log(1 - D): quite good for transfer learning tasks
+
+                -Log(1 - D):         Maybe better for training the AIRL reward function, but not for transfer learning tasks.
+
+        
+    
+
+
+
+
+
+

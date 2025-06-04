@@ -1,0 +1,8 @@
+<mujocoinclude>
+    <default class="f_block_visual">
+    <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="f_block_collision">
+    <geom group="3" type="mesh"/>
+    </default>
+</mujocoinclude>

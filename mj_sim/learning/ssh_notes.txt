@@ -1,0 +1,129 @@
+
+This is a note for all the ssh i need to keep track of
+
+Getting models from computer
+
+
+scp -r peterduc31@34.159.16.51:/home/peterduc31/masters_code/mj_sim/attached_Correct.png .
+
+
+
+----------------------- Trained model download -----------------------:
+
+
+NOTE: Remember to increment the numbers!!
+CPU1:
+scp -r peterduc31@34.32.197.223:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_model_from_google_cpu1_31 learning/airl_UR/saved_models_from_google_cpu1
+
+
+R2:
+scp -r peterduc31@34.159.16.51:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_from_google_R2_29 learning/airl_UR/saved_models_from_google_R2
+
+
+R1:
+scp -r peterduc31@34.147.84.178:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_from_google_R1_27 learning/airl_UR/saved_models_from_google_R1
+
+
+CPU2:
+scp -r peterduc31@35.228.241.143:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_from_google_cpu2_33 learning/airl_UR/saved_models_from_google_cpu2
+
+
+sdur-3
+scp -r pnguyen@SDUR-3.sandbox.tek.sdu.dk:/home/pnguyen/code_development/masters_code/mj_sim/learning/airl_UR/saved_files_for_export_sdur_46 learning/airl_UR/Saved_models_from_sdur_3
+
+
+/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_best/2025_05_03
+
+
+
+
+ ----------------------- best model upload -----------------------:
+CPU1:
+scp -r 2025_05_20/ peterduc31@34.32.197.223:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_best
+
+R2:
+scp -r 2025_05_16/ peterduc31@34.159.16.51:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_best
+
+R1:
+scp -r 2025_05_20/  peterduc31@34.147.84.178:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_best
+
+CPU2:
+scp -r 2025_05_20/ peterduc31@35.228.241.143:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/saved_models_best
+
+sdur-3
+scp -r 2025_05_20/ pnguyen@SDUR-3.sandbox.tek.sdu.dk:/home/pnguyen/code_development/masters_code/mj_sim/learning/airl_UR/saved_models_best
+
+
+
+
+ ----------------------- BC disc upload -----------------------:
+
+CPU1:
+scp -r C1_25-05-09_15-29-16/ peterduc31@34.32.197.223:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_discriminator
+
+R2:
+scp -r C1_25-05-09_15-29-16/ peterduc31@34.159.16.51:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_discriminator
+
+R1:
+scp -r C1_25-05-09_15-29-16/ peterduc31@34.147.84.178:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_discriminator
+
+CPU2:
+scp -r C1_25-05-09_15-29-16/ peterduc31@35.228.241.143:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_discriminator
+
+sdur-3
+scp -r C1_25-05-09_15-29-16/ pnguyen@SDUR-3.sandbox.tek.sdu.dk:/home/pnguyen/code_development/masters_code/mj_sim/learning/BC/pretrained_discriminator
+
+
+
+
+
+
+ ----------------------- BC actor upload -----------------------:
+
+
+CPU1:
+scp -r C1_25-05-09_12-18-00/ peterduc31@34.32.197.223:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_actors
+
+R2:
+scp -r C1_25-05-09_12-18-00/ peterduc31@34.159.16.51:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_actors
+
+R1:
+scp -r C1_25-05-11_11-58-03 peterduc31@34.147.84.178:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_actors
+
+CPU2:
+scp -r C1_25-05-09_12-18-00/ peterduc31@35.228.241.143:/home/peterduc31/masters_code/mj_sim/learning/BC/pretrained_actors
+
+sdur-3
+scp -r C1_25-05-09_12-18-00/ pnguyen@SDUR-3.sandbox.tek.sdu.dk:/home/pnguyen/code_development/masters_code/mj_sim/learning/BC/pretrained_actors
+
+
+
+
+
+ ----------------------- Expert demonstrations -----------------------:
+
+
+CPU1:
+scp -r C1_easy_25-04-28_11-54-27URSim_SKRL_env_PPO peterduc31@34.32.197.223:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/expert_demo
+
+R2:
+scp -r C1_easy_25-04-28_11-54-27URSim_SKRL_env_PPO peterduc31@34.159.16.51:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/expert_demo
+
+R1:
+scp -r C1_25-05-11_11-58-03 peterduc31@34.147.84.178:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/expert_demo
+
+CPU2:
+scp -r C1_25-05-09_12-18-00/ peterduc31@35.228.241.143:/home/peterduc31/masters_code/mj_sim/learning/airl_UR/expert_demo
+
+sdur-3
+scp -r C1_25-05-09_12-18-00/ pnguyen@SDUR-3.sandbox.tek.sdu.dk:/home/pnguyen/code_development/masters_code/mj_sim/learning/BC/pretrained_actors
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+Work log personal summary:  09_05_2025
+This log is to keep record and notebooking personal work for personal assistance
+
+
+ ---------- Current tasks & progress ---------- 
+
+
+ ---------- general notes ---------- 
+
+
+
+Model upload protocol
+model is both the neural network and the optimizer.
+- Upload BC actor model
+- Upload BC disc reward model
+
+- Upload pretrained actor critic model
+- Upload pretrained discriminator model
+
+
+
+Change training environment, (When changing between the different tasks and experts)
+- Change environment in main_airl
+- change expert demonstration data in main_airl,
+- Change actor, critic and dicriminator models,
+- Change xml path in config file
+- Change off_policy_data_size to match time_step per episode
+- change time step per episode in config file
+- Change Ur flange in the xml file with UR robot
+- Set state-only or state-action in AIRL model
+
+- Do expert reward output test
+
+
+
+
+----------- F1 Characteristic -----------
+
+0:: 1 IRL reward sum is 1706.1966552734375, IRL score average is 8.530982971191406, environment reward 0.9999144673347473
+1:: 2 IRL reward sum is 1701.705810546875, IRL score average is 8.508528709411621, environment reward 0.9996582269668579
+2:: 3 IRL reward sum is 1664.9539794921875, IRL score average is 8.324769973754883, environment reward 0.9995386600494385
+3:: 4 IRL reward sum is 1697.586181640625, IRL score average is 8.487931251525879, environment reward 0.9992711544036865
+4:: 5 IRL reward sum is 1679.857177734375, IRL score average is 8.399286270141602, environment reward 0.999671220779419
+5:: 6 IRL reward sum is 1694.63525390625, IRL score average is 8.473176002502441, environment reward 0.9993833899497986
+6:: 7 IRL reward sum is 1694.7415771484375, IRL score average is 8.473708152770996, environment reward 0.9996926188468933
+7:: 8 IRL reward sum is 1747.140625, IRL score average is 8.735703468322754, environment reward 0.9993161559104919
+8:: 9 IRL reward sum is 1716.83447265625, IRL score average is 8.584172248840332, environment reward 0.9996173977851868
+9:: 10 IRL reward sum is 1700.0867919921875, IRL score average is 8.500433921813965, environment reward 0.9992512464523315
+10:: 11 IRL reward sum is 1695.1932373046875, IRL score average is 8.475966453552246, environment reward 0.9993618726730347
+11:: 12 IRL reward sum is 1723.3885498046875, IRL score average is 8.616942405700684, environment reward 0.9733127355575562
+12:: 13 IRL reward sum is 1689.47021484375, IRL score average is 8.447351455688477, environment reward 0.9994055032730103
+13:: 14 IRL reward sum is 1680.7147216796875, IRL score average is 8.403573989868164, environment reward 0.9951542019844055
+14:: 15 IRL reward sum is 1749.095458984375, IRL score average is 8.745477676391602, environment reward 0.9992155432701111

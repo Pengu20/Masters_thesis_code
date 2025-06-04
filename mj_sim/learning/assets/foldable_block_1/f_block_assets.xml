@@ -1,0 +1,32 @@
+<mujocoinclude>
+    <!-- block 1 assets -->
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_0.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_1.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_2.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_3.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_4.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_5.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_6.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_1/block_1_collision_7.obj"/>
+
+
+    <!-- block 2 assets -->
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_0.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_1.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_2.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_3.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_4.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_5.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_6.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_7.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_8.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_9.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_10.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_11.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_12.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_13.obj"/>
+    <mesh file="../assets/foldable_block_1/assets/block_2/block_2_collision_14.obj"/>
+
+</mujocoinclude>

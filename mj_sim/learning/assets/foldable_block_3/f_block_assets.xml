@@ -1,0 +1,27 @@
+<mujocoinclude>
+    <!-- block 1 assets -->
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_0.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_1.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_2.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_3.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_4.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_5.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_6.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_7.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_8.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_link/f3_block_link_collision_9.obj"/>
+
+
+    <!-- block 2 assets -->
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate_collision_0.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate_collision_1.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate_collision_2.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate_collision_3.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate_collision_4.obj"/>
+    <mesh file="../assets/foldable_block_3/assets/f3_block_plate/f3_block_plate_collision_5.obj"/>
+
+
+
+</mujocoinclude>

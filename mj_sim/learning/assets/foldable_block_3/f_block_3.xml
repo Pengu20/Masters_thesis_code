@@ -1,0 +1,158 @@
+<mujoco model="f_block">
+
+  <default>
+    <include file="../assets/foldable_block_3/f_block_classes.xml" />
+  </default>
+
+  <asset>
+    <include file="../assets/foldable_block_3/f_block_assets.xml" />
+  </asset>
+
+
+  <worldbody>
+
+    <!-- 3 body structure -->
+
+
+
+
+    <body name="f3_block_1" pos="0.9 0.37 0.05" quat=" 1    0         0         0 ">
+        <joint name="f3_block_free_joint" type="free"/>
+        <inertial mass="0.5" pos="0.075 0.01 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+
+        <geom mesh="f3_block_plate" rgba="0.9278748131857267 0.9750400105728048 0.011301633201228567 1"  class="f3_block_visual"/>
+        <geom mesh="f3_block_plate_collision_0" rgba="0.18076945838831482 0.19889101927907116 0.8724239034434478 1" class="f3_block_collision" />
+        <geom mesh="f3_block_plate_collision_1" rgba="0.8349444943689354 0.6761946945189133 0.33010370045568516 1" class="f3_block_collision"/>
+        <geom mesh="f3_block_plate_collision_2" rgba="0.8938555477495602 0.370864054702849 0.04724099909715218 1" class="f3_block_collision"/>
+        <geom mesh="f3_block_plate_collision_3" rgba="0.3162295518708149 0.43406955044978357 0.9791849935326291 1" class="f3_block_collision"/>
+        <geom mesh="f3_block_plate_collision_4" rgba="0.99271047162903 0.9285073596818263 0.12479439747228471 1" class="f3_block_collision"/>
+        <geom mesh="f3_block_plate_collision_5" rgba="0.05935130030960267 0.7529771890764725 0.22837089692494694 1" class="f3_block_collision"/>
+
+      <body name="f3_block_2" pos="0.150 0.0 -0.0" quat="1 0 0 0">
+          <inertial mass="0.05" pos="0.020 0.010 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+          <joint name="f3_block_1_joint" pos="0.01 0.01 0.0" axis="0 0 1"  damping="0.1" range="-3.14 4.7115"/>
+          
+
+          <geom mesh="f3_block_link" rgba="0.105 0.091 0.188 1"  class="f3_block_visual"/>
+          <geom mesh="f3_block_link_collision_0" rgba="0.2992562329040618 0.4252512394630181 0.831912094117138 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_1" rgba="0.1595922727019311 0.9696162877792459 0.7224056856424816 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_2" rgba="0.5697960670610052 0.058134170473644775 0.022095857956316856 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_3" rgba="0.4917060296470629 0.3552274733575328 0.8838357735143907 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_4" rgba="0.818091198063223 0.9977975896167404 0.9309074839164203 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_5" rgba="0.2045959024773919 0.8322210462263822 0.8901627770026551 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_6" rgba="0.009942686740152862 0.9703182884271851 0.5732672283776591 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_7" rgba="0.7804299043810422 0.31807659347790285 0.5917882320637473 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_8" rgba="0.9671768451814209 0.19808913405221396 0.23480364706907042 1" class="f3_block_collision"/>
+          <geom mesh="f3_block_link_collision_9" rgba="0.15242985507146656 0.36353944985387865 0.73685715043536 1" class="f3_block_collision"/>
+      
+      
+        <body name="f3_block_3" pos="0.045 0.0 0.00" quat=" 1    0         0         0 ">
+            <joint name="f3_block_2_joint" pos="-0.01 0.01 0.0" axis="0 0 1"  damping="0.1" range="-3.14 4.7115"/>
+            <inertial mass="0.5" pos="0.075 0.01 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+
+            <geom mesh="f3_block_plate" rgba="0.9278748131857267 0.9750400105728048 0.011301633201228567 1"  class="f3_block_visual"/>
+            <geom mesh="f3_block_plate_collision_0" rgba="0.18076945838831482 0.19889101927907116 0.8724239034434478 1" class="f3_block_collision" />
+            <geom mesh="f3_block_plate_collision_1" rgba="0.8349444943689354 0.6761946945189133 0.33010370045568516 1" class="f3_block_collision"/>
+            <geom mesh="f3_block_plate_collision_2" rgba="0.8938555477495602 0.370864054702849 0.04724099909715218 1" class="f3_block_collision"/>
+            <geom mesh="f3_block_plate_collision_3" rgba="0.3162295518708149 0.43406955044978357 0.9791849935326291 1" class="f3_block_collision"/>
+            <geom mesh="f3_block_plate_collision_4" rgba="0.99271047162903 0.9285073596818263 0.12479439747228471 1" class="f3_block_collision"/>
+            <geom mesh="f3_block_plate_collision_5" rgba="0.05935130030960267 0.7529771890764725 0.22837089692494694 1" class="f3_block_collision"/>
+
+
+          <body name="f3_block_4" pos="0.150 0.0 0.0" quat="1 0 0 0">
+              <inertial mass="0.05" pos="0.020 0.010 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+              <joint name="f3_block_3_joint" pos="0.01 0.01 0.0" axis="0 0 1"  damping="0.1" range="-3.14 4.7115"/>
+
+              <geom mesh="f3_block_link" rgba="0.105 0.091 0.188 1"  class="f3_block_visual"/>
+              <geom mesh="f3_block_link_collision_0" rgba="0.2992562329040618 0.4252512394630181 0.831912094117138 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_1" rgba="0.1595922727019311 0.9696162877792459 0.7224056856424816 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_2" rgba="0.5697960670610052 0.058134170473644775 0.022095857956316856 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_3" rgba="0.4917060296470629 0.3552274733575328 0.8838357735143907 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_4" rgba="0.818091198063223 0.9977975896167404 0.9309074839164203 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_5" rgba="0.2045959024773919 0.8322210462263822 0.8901627770026551 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_6" rgba="0.009942686740152862 0.9703182884271851 0.5732672283776591 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_7" rgba="0.7804299043810422 0.31807659347790285 0.5917882320637473 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_8" rgba="0.9671768451814209 0.19808913405221396 0.23480364706907042 1" class="f3_block_collision"/>
+              <geom mesh="f3_block_link_collision_9" rgba="0.15242985507146656 0.36353944985387865 0.73685715043536 1" class="f3_block_collision"/>
+            
+              <body name="f3_block_5" pos="0.045 0.0 0.0" quat="1 0 0 0">
+                  <joint name="f3_block_4_joint" pos="-0.01 0.01 0.0" axis="0 0 1"  damping="0.1" range="-3.14 4.7115"/>
+                  <inertial mass="0.5" pos="0.075 0.01 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+
+                  <geom mesh="f3_block_plate" rgba="0.9278748131857267 0.9750400105728048 0.011301633201228567 1"  class="f3_block_visual"/>
+                  <geom mesh="f3_block_plate_collision_0" rgba="0.18076945838831482 0.19889101927907116 0.8724239034434478 1" class="f3_block_collision" />
+                  <geom mesh="f3_block_plate_collision_1" rgba="0.8349444943689354 0.6761946945189133 0.33010370045568516 1" class="f3_block_collision"/>
+                  <geom mesh="f3_block_plate_collision_2" rgba="0.8938555477495602 0.370864054702849 0.04724099909715218 1" class="f3_block_collision"/>
+                  <geom mesh="f3_block_plate_collision_3" rgba="0.3162295518708149 0.43406955044978357 0.9791849935326291 1" class="f3_block_collision"/>
+                  <geom mesh="f3_block_plate_collision_4" rgba="0.99271047162903 0.9285073596818263 0.12479439747228471 1" class="f3_block_collision"/>
+                  <geom mesh="f3_block_plate_collision_5" rgba="0.05935130030960267 0.7529771890764725 0.22837089692494694 1" class="f3_block_collision"/>
+
+
+                          
+                <!-- <body name="f3_block_6" pos="0.150 0.0 0.0" quat="1 0 0 0">
+
+                    <inertial mass="0.05" pos="0.020 0.010 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+                    <joint name="f3_block_5_joint" pos="0.01 0.01 0.0" axis="0 0 1"  damping="0.0" range="-3.14 4.7115"/>
+                    
+
+                    <geom mesh="f3_block_link" rgba="0.105 0.091 0.188 1"  class="f3_block_visual"/>
+                    <geom mesh="f3_block_link_collision_0" rgba="0.2992562329040618 0.4252512394630181 0.831912094117138 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_1" rgba="0.1595922727019311 0.9696162877792459 0.7224056856424816 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_2" rgba="0.5697960670610052 0.058134170473644775 0.022095857956316856 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_3" rgba="0.4917060296470629 0.3552274733575328 0.8838357735143907 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_4" rgba="0.818091198063223 0.9977975896167404 0.9309074839164203 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_5" rgba="0.2045959024773919 0.8322210462263822 0.8901627770026551 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_6" rgba="0.009942686740152862 0.9703182884271851 0.5732672283776591 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_7" rgba="0.7804299043810422 0.31807659347790285 0.5917882320637473 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_8" rgba="0.9671768451814209 0.19808913405221396 0.23480364706907042 1" class="f3_block_collision"/>
+                    <geom mesh="f3_block_link_collision_9" rgba="0.15242985507146656 0.36353944985387865 0.73685715043536 1" class="f3_block_collision"/>
+
+
+
+                  <body name="f3_block_7" pos="0.045 0.0 0.0" quat="1 0 0 0">
+                      <joint name="f3_block_6_joint" pos="-0.01 0.01 0.0" axis="0 0 1"  damping="0.0" range="-3.14 4.7115"/>
+                      <inertial mass="0.5" pos="0.075 0.01 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+
+                      <geom mesh="f3_block_plate" rgba="0.9278748131857267 0.9750400105728048 0.011301633201228567 1"  class="f3_block_visual"/>
+                      <geom mesh="f3_block_plate_collision_0" rgba="0.18076945838831482 0.19889101927907116 0.8724239034434478 1" class="f3_block_collision" />
+                      <geom mesh="f3_block_plate_collision_1" rgba="0.8349444943689354 0.6761946945189133 0.33010370045568516 1" class="f3_block_collision"/>
+                      <geom mesh="f3_block_plate_collision_2" rgba="0.8938555477495602 0.370864054702849 0.04724099909715218 1" class="f3_block_collision"/>
+                      <geom mesh="f3_block_plate_collision_3" rgba="0.3162295518708149 0.43406955044978357 0.9791849935326291 1" class="f3_block_collision"/>
+                      <geom mesh="f3_block_plate_collision_4" rgba="0.99271047162903 0.9285073596818263 0.12479439747228471 1" class="f3_block_collision"/>
+                      <geom mesh="f3_block_plate_collision_5" rgba="0.05935130030960267 0.7529771890764725 0.22837089692494694 1" class="f3_block_collision"/>
+
+
+
+                  </body>
+      
+              </body> -->
+
+            </body>
+
+          </body>
+
+        </body>
+   
+      </body>
+
+
+    </body>
+
+
+  </worldbody>
+
+  <actuator>
+    <!-- actuators for position control -->
+    <!-- <include file="../assets/foldable_block_2/actuator_motor.xml"/> -->
+
+    <!-- actuators for velocity control -->
+    <!-- <include file="../assets/universal_robots_ur5e/actuator_velocity.xml"/> -->
+
+    <!-- actuators for torque control -->
+    <!-- <include file="../assets/universal_robots_ur5e/actuator_motor.xml"/> -->
+
+  </actuator>
+
+
+  
+</mujoco>

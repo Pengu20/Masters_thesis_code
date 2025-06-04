@@ -1,0 +1,428 @@
+
+
+
+
+import argparse
+import time
+from threading import Lock
+from typing import Tuple, Union
+
+import mujoco as mj
+import numpy as np
+import torch
+
+
+from utils.mj import get_mj_data, get_mj_model, attach, get_joint_names, get_joint_q, get_joint_dq, get_joint_ddq, get_joint_torque, body_name2id, set_joint_q
+from gymnasium import utils
+from gymnasium.envs.mujoco import MujocoEnv
+from gymnasium.spaces import Box
+import os
+
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
+
+import seaborn as sns
+from typing import Union, Tuple, List
+from skrl.memories.torch import Memory
+
+import pickle
+
+from typing import Any, Mapping, Optional, Sequence, Tuple, Union
+
+from torch.distributions import Normal
+
+from spatialmath.base import r2q, qqmul, q2r, eul2r, qconj
+import spatialmath as sm
+
+from robots.ur_robot import URRobot
+from collections import deque
+
+
+from utils.rtb import make_tf
+from utils.math import angular_distance
+
+
+
+
+from learning.airl_UR.airl import AIRL
+from learning.airl_UR.utils.utils import log_prob_density
+
+
+
+
+DEFAULT_CAMERA_CONFIG = {
+    "distance": 4.0,
+}
+
+class URSim_SKRL_env(MujocoEnv):
+
+    # Not sure what this guy is
+    metadata = {
+        "render_modes": [
+            "human",
+            "rgb_array",
+            "depth_array",
+        ],
+        # "render_fps": 100,
+    }
+
+
+    # set default episode_len for truncate episodes
+    def __init__(self, args, name, render_mode="human"):
+        # For expert training set
+        self.time_marks = [0, 200, 400, 600]
+
+
+
+
+        self.args = args
+        self.actuated_joints = 6
+        observation_space_size = 20
+
+        # # change shape of observation to your observation space size
+        self.observation_space = Box(
+            low=-np.inf, 
+            high=np.inf, 
+            shape=(observation_space_size,), 
+            dtype=np.float64
+        )
+        
+        super().__init__(
+            model_path=os.path.abspath(args.scene_path),
+            frame_skip=7,
+            observation_space=self.observation_space,
+            render_mode=render_mode
+        )
+        # UR5e robot interface
+        self.ur5e = URRobot(args, self.data, self.model, robot_type=URRobot.Type.UR5e)
+
+
+        # # constrained action space
+        self.action_space = Box(
+            -np.pi*2, 
+            np.pi*2, 
+            shape=(self.actuated_joints,), 
+            dtype=np.float64
+        )
+
+
+        self.step_number = 0
+        self.all_steps = 0
+        self.episode_len = args.episode_timeout
+        
+
+
+        self.episode_count = 0
+        self.name = name
+
+        self.previous_action = [-1]*self.actuated_joints 
+
+
+        self.robot_joint_names = ["shoulder_pan", "shoulder_lift", "elbow", "wrist_1", "wrist_2", "wrist_3"]
+
+
+        self.state_actions = []
+
+
+        qpos_dir = os.path.abspath("learning/config_files/F1_start_state/qpos_start_state.pkl")
+        qvel_dir = os.path.abspath("learning/config_files/F1_start_state/qvel_start_state.pkl")
+
+        qpos_file = open(qpos_dir, "rb")
+        qvel_file = open(qvel_dir, "rb")
+
+        self.Q_list = pickle.load(qpos_file)
+        self.Q_vel_list = pickle.load(qvel_file)
+
+
+
+
+        # Load expert data [AIRL]
+        path_expert_data_1 = os.path.abspath("learning/airl_UR/expert_demo/F1_17_25-05-08_18-33-53URSim_SKRL_env_PPO/expert_memory.pkl")
+
+        expert_data_file_1 = open(path_expert_data_1, "rb")
+        self.expert_memory_1 = pickle.load(expert_data_file_1)
+        
+
+
+        # DEBUG; This is for getting the observation space size.. 
+        # But mujoco must initialize before its possible to run it
+        self.reset()
+        # print("Observation test: ", self._get_obs())
+        assert len(self._get_obs()) == observation_space_size, f"Observation space size is not correct. Expected {observation_space_size}, got {len(self._get_obs())}"
+
+
+
+
+
+
+    def _d(self) -> bool:
+
+        
+
+
+        # If timeout
+        if self.step_number >= self.episode_len:
+            return True
+
+        
+
+
+        return False
+
+
+
+
+    def _r(self) -> float:
+        '''
+        Summary: This is the reward function for the RL mujoco simulation task.
+                    The reward is based on the proximity to 0
+
+        ARGS:
+            args: The arguments that is passed from the main script
+            robot: The robot model that also contains all mujoco data and model information
+
+        RETURNS:
+            punishment: Quantitative value that represents the performance of the robot, based on intended task specified in this function.
+        '''
+
+
+
+        # Add block joint value as observation - Joint value 1
+        block_joint = get_joint_q(self.data, self.model, "f_block_1_joint_1")
+        target_error = abs(block_joint) / np.pi
+        
+        # Omega easy task for for PPO evaluation
+        # block_joint = get_joint_q(self.data, self.model, "wrist_1")
+        # target_error = abs(np.pi- block_joint)
+
+        
+
+
+        reward = 1 - target_error
+
+
+
+        return reward[0]
+
+
+
+    def _get_obs(self) -> np.ndarray:
+        joint = self.get_robot_q()
+        joint_vel = self.get_robot_dq()
+
+        # Order as [joint1 pos, joint1 vel, joint2 pos, joint2 vel, ...]
+        observation = np.array([])
+
+
+        for i in range(self.actuated_joints):
+            observation = np.append(observation, joint[i])
+        
+        for i in range(self.actuated_joints):
+            observation = np.append(observation, joint_vel[i])
+
+
+        # Add cartesian position of the end effector
+        ee_pose = self.ur5e.get_ee_pose()
+
+        cartesian_ee_pos = ee_pose.t
+        cartesian_ee_rot = r2q(ee_pose.R)
+
+        observation = np.append(observation, cartesian_ee_pos)
+        observation = np.append(observation, cartesian_ee_rot)
+
+
+        # Add block joint value as observation
+        block_joint = get_joint_q(self.data, self.model, "f_block_1_joint_1")
+        observation = np.append(observation, block_joint)
+
+
+
+
+
+        return observation
+
+
+    def joint_space_control(self, input_val):
+        
+        # Remade into a velocity controller
+
+
+        Kp = 30
+
+
+        # Calculate the desired velocity based on a p controller
+
+
+
+        q_tilde = np.array(input_val) - np.array(self.get_robot_q())
+
+
+        u = Kp*(q_tilde)
+
+
+
+        return u
+
+
+
+
+
+    def step(
+        self, a
+    ) -> Tuple[np.ndarray, float, bool, dict]:
+        """
+        Placeholder function.
+
+        Returns:
+            Tuple: A tuple.
+        """
+                
+        # Expert data generation
+
+
+        # a = self.expert_memory_1[self.step_number + 200*self.episode_count][1]
+
+
+        # saturate action values 
+        for i, val in enumerate(a):
+            a[i] = min(max(a[i], -5), 5)
+
+
+
+        pre_state = self._get_obs()
+
+
+        self.do_simulation(a, self.frame_skip)
+
+
+
+        self.step_number += 1
+
+
+
+        action = a
+
+
+
+        reward = self._r()
+        done = self._d()
+        obs = self._get_obs()   
+
+
+
+
+        # log_pis = log_prob_density(torch.Tensor(a), torch.Tensor(np.array([a])), torch.Tensor(np.array([[0.1]*self.actuated_joints])))
+        # reward = self._r_IRL(obs=pre_state, done=done, log_pis=log_pis, next_state=obs)
+
+
+
+        if self.args.save_state_actions and self.record_mode==True and self.started == True:
+            state_action = np.concatenate((self._get_obs(), action))    
+            self.state_actions.append(state_action)
+
+            self.memory_single_episode.append([pre_state, action, reward, done, 0, obs]) # the log_pis should be 0, as it is calculated online in IRL
+
+
+
+
+
+
+        infos =  {}
+
+        if self.render_mode == "human":
+            self.render()
+        
+        truncated = self.step_number > self.episode_len
+
+
+
+
+
+        return obs, reward, done, truncated, infos
+
+
+    def reset(self): # overloading reset_model to fit more libraries 
+        return self.reset_model(), {}
+    
+
+    def reset_model(
+        self
+    ):     
+        self.all_steps += self.step_number
+
+
+    
+
+        self.episode_count += 1
+        self.step_number = 0
+
+
+        self.set_state(self.Q_list, self.Q_vel_list)
+
+        attach(
+            self.data,
+            self.model,
+            "attach",
+            "f1_block_free_joint",
+            self.ur5e.T_world_base @ self.ur5e.get_ee_pose()
+        )
+
+        self.record_mode = False
+
+
+        return  self._get_obs()
+
+
+
+    def get_robot_q(self):
+
+        # Return the 6 first values of the qpos
+        pos = []
+
+        for i, joint_name in enumerate(self.robot_joint_names):
+            pos.append(get_joint_q(self.data, self.model, joint_name)[0])
+
+        return pos
+    
+
+
+    def get_robot_dq(self):
+
+        # Return the 6 first values of the qpos
+        vel = []
+
+        for i, joint_name in enumerate(self.robot_joint_names):
+            vel.append(get_joint_dq(self.data, self.model, joint_name)[0])
+        return vel
+    
+
+    def get_robot_ddq(self):
+
+        # Return the 6 first values of the qpos
+        acc = []
+
+        for i, joint_name in enumerate(self.robot_joint_names):
+            acc.append(get_joint_ddq(self.data, self.model, joint_name)[0])
+        return acc
+
+
+
+    def get_robot_torque(self):
+
+        # Return the 6 first values of the qpos
+        Torque = []
+
+        for i, joint_name in enumerate(self.robot_joint_names):
+            Torque.append(get_joint_torque(self.data, self.model, joint_name)[0])
+        return Torque
+
+
+
+
+    def viewer_setup(self):
+        assert self.viewer is not None
+        v = self.viewer
+        v.cam.trackbodyid = 0
+        v.cam.distance = self.model.stat.extent * 0.5
+        v.cam.lookat[2] = 0.12250000000000005  # v.model.stat.center[2]

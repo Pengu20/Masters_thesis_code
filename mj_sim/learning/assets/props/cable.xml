@@ -1,0 +1,67 @@
+<mujoco model="cable">
+    <extension>
+        <plugin plugin="mujoco.elasticity.cable"/>
+    </extension>
+
+	<worldbody>
+
+		<!-- <body name="root">
+			<geom name="root" type="box" size="0.002 0.002 0.002" contype="0" conaffinity="0" /> -->
+
+			<!-- add compisite body: cable -->
+			<!-- <composite prefix="cable:" type="cable" curve="0 s 0" count="50 1 1" -->
+			<body name="cable">
+				<composite prefix="cable:" type="cable" curve="0 s 0" count="100 1 1" size="0.915 .1 4" initial="none">
+					
+					<plugin plugin="mujoco.elasticity.cable">
+					<!--Units are in Pa (SI)-->
+					<!-- config for copper -->
+					<!-- <config key="twist" value="1.12"/>
+						<config key="bend" value="1.63"/>
+						<config key="vmax" value="2"/> -->
+
+					<!-- config for rubber -->
+					<!-- <config key="twist" value="1.51e4"/>
+						<config key="bend" value="3.77e4"/>
+						<config key="vmax" value="0.5"/> -->
+
+					<!-- rubber new -->
+						<config key="twist" value="60000.0" />
+						<config key="bend" value="10000000.0" />
+						<config key="vmax" value="0" />
+
+					<!-- cobber new -->
+					<!-- <config key="twist" value="44700000000.0" />
+						<config key="bend"  value="110000000000.0" />
+						<config key="vmax" value="0.5" /> -->
+
+
+					<!-- <config key="twist" value="45299400.0" />
+						<config key="bend" value="209900000.0" /> -->
+					<!-- copper -->
+
+					<!-- <config key="twist" value="5e8" />
+						<config key="bend" value="15e8" /> -->
+					<!-- <config key="twist" value="44.7e9" />
+						<config key="bend" value="110e9" /> -->
+
+					<!-- <config key="vmax" value="0" /> -->
+					<!-- <config key="twist" value="1.51e-5" />
+						<config key="bend" value="3.77e-5" />
+						<config key="vmax" value="0.5" /> -->
+					</plugin>
+
+					<joint kind="main" damping="1e-2" armature="0.001" />
+				<!-- mass = 0.035 kg / 50     ( total mass of wire / number of segments ) -->
+					<geom type="capsule"
+						size=".002"
+						rgba="0.2 0.2 0.2 1"
+						mass="0.00035"
+						friction="0.3 0.3 0.3"
+						condim="4"
+						solref="0.00001 1 "
+					/>
+				</composite>
+			</body>
+	</worldbody>
+</mujoco>

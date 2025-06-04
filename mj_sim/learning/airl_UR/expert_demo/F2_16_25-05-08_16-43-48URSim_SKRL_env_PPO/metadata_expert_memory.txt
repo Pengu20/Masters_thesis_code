@@ -1,0 +1,15 @@
+Number of datasets: 5600
+
+steps per episode 350
+
+obs expert data consisting of
+
+6 joints
+
+6 joint velocities
+
+7 end effector pose
+
+2 block joints
+
+2 block joint velocities

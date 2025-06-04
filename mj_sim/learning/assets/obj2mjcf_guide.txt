@@ -1,0 +1,11 @@
+
+
+Repo for obj2mjcf transfer:
+https://github.com/kevinzakka/obj2mjcf
+
+
+obj2mjcf --help
+
+
+to make a xml file and to also to make a collision mesh for the object
+obj2mjcf --obj-dir /path/to/your/obj_files --save-mjcf --decompose

@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0  # Use the latest stable version
+    hooks:
+      # - id: trailing-whitespace
+      # - id: end-of-file-fixer
+      - id: check-added-large-files
+
+  - repo: local
+    hooks:
+      # Run pytest on commit
+      - id: run-pytest
+        name: Run pytest
+        entry: pytest
+        language: system
+        types: [python]
+        pass_filenames: false  # Do not pass file names to pytest
+        always_run: true  # Ensure pytest runs on every commit
+
+      # Auto-generate documentation with pdoc on commit
+      - id: generate-docs
+        name: Generate Documentation with pdoc
+        entry: pdoc -o public/ --logo mujoco-logo-reborn.png main.py sim.py ctrl learning robots utils/mj.py # tests sensors examples
+        language: system
+        pass_filenames: false  # Do not pass file names to pdoc
+        always_run: true  # Ensure documentation generation runs on every commit

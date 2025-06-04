@@ -1,0 +1,41 @@
+<mujoco model="feeder">
+
+    <compiler angle="radian" meshdir="assets" autolimits="true" />
+
+    <extension>
+        <plugin plugin="mujoco.sdf.sdflib">
+            <instance name="sdf">
+                <config key="aabb" value="0" />
+            </instance>
+        </plugin>
+    </extension>
+
+    <asset>
+        <mesh name="feeder" file="feeder.obj">
+            <plugin instance="sdf" />
+        </mesh>
+    </asset>
+
+    <worldbody>
+        <body name="feeder">
+            <site name="hole" pos="0.075 -0.075 0" rgba="0 0 0 0.1" />
+
+            <geom name="feeder_geom" type="sdf" mesh="feeder" solref="0.000001 1">
+                <plugin instance="sdf" />
+            </geom>
+
+
+            <joint name="x" type="slide" axis="1 0 0"/>
+            <joint name="y" type="slide" axis="0 1 0"/>
+            <joint name="z" type="slide" axis="0 0 1"/>
+
+        </body>
+    </worldbody>
+
+    <actuator>
+        <position name="x" kp="10000" kv="100" joint="x" ctrlrange="0 0.01" />
+        <position name="y" kp="10000" kv="100" joint="y" ctrlrange="0 0.01" />
+        <position name="z" kp="10000" kv="100" joint="z" ctrlrange="0 0.01" />
+    </actuator>
+
+</mujoco>

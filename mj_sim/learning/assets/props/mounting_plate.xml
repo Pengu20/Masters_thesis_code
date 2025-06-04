@@ -1,0 +1,7 @@
+<mujocoinclude>
+	<worldbody>
+		<body name="ur_mounting_plate" pos="0.22331901 0.37537452 0.06895663">
+			<geom name="ur_mounting_plate" type="cylinder" size="0.1 0.01895663"  rgba="0.2 0.2 0.2 1" mass="10"/>
+		</body>
+	</worldbody>
+</mujocoinclude>

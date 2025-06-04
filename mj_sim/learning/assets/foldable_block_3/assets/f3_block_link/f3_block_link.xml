@@ -1,0 +1,39 @@
+<mujoco model="f3_block_link">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="Steel_-_Satin" specular="0.5" shininess="0.5" rgba="0.627451 0.627451 0.627451 1.0"/>
+    <mesh file="f3_block_link.obj"/>
+    <mesh file="f3_block_link_collision_0.obj"/>
+    <mesh file="f3_block_link_collision_1.obj"/>
+    <mesh file="f3_block_link_collision_2.obj"/>
+    <mesh file="f3_block_link_collision_3.obj"/>
+    <mesh file="f3_block_link_collision_4.obj"/>
+    <mesh file="f3_block_link_collision_5.obj"/>
+    <mesh file="f3_block_link_collision_6.obj"/>
+    <mesh file="f3_block_link_collision_7.obj"/>
+    <mesh file="f3_block_link_collision_8.obj"/>
+    <mesh file="f3_block_link_collision_9.obj"/>
+  </asset>
+  <worldbody>
+    <body name="f3_block_link">
+      <geom material="Steel_-_Satin" mesh="f3_block_link" class="visual"/>
+      <geom mesh="f3_block_link_collision_0" rgba="0.49929027030117257 0.37668219669923175 0.3059840292811715 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_1" rgba="0.4577517595244134 0.9283619189977684 0.5820520379446212 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_2" rgba="0.895278113716544 0.16814769242501582 0.5402354596415866 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_3" rgba="0.6789533923717219 0.9736587899639935 0.1074765517436278 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_4" rgba="0.9084536057858092 0.852837461546981 0.8171775345432688 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_5" rgba="0.8584623738064553 0.10789411467915633 0.759743865377774 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_6" rgba="0.39861883045863733 0.2057087341344287 0.10617229818249607 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_7" rgba="0.9446089700500092 0.01420570725664716 0.7600637395468792 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_8" rgba="0.7027873540210792 0.18966134087413378 0.03942049253017843 1" class="collision"/>
+      <geom mesh="f3_block_link_collision_9" rgba="0.1306860932385424 0.8902684762345735 0.7907595693903346 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

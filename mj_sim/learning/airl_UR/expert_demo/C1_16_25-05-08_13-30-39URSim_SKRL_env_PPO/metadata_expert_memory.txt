@@ -1,0 +1,11 @@
+Number of datasets: 2400
+
+
+150 steps per episode
+this data set consists of:
+
+Robot joint:
+Robot velocities:
+End effector pose:
+cloth keypoint position
+cloth keypoint velocity

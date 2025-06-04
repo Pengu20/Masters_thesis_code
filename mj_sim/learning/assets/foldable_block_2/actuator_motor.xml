@@ -1,0 +1,8 @@
+
+<mujocoinclude>
+	<!-- https://www.universal-robots.com/articles/ur/robot-care-maintenance/max-joint-torques-cb3-and-e-series/ -->
+	<motor name="f_block_actuator_1"  joint="f2_block_1_joint"  ctrlrange="0 3.14"/>
+	<motor name="f_block_actuator_2"  joint="f2_block_2_joint"  ctrlrange="-1.57 1.57"/>
+</mujocoinclude>
+
+

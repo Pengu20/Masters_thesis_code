@@ -1,0 +1,66 @@
+<mujoco model="f_block">
+
+  <default>
+    <include file="../assets/foldable_block_1/f_block_classes.xml" />
+  </default>
+
+  <asset>
+    <include file="../assets/foldable_block_1/f_block_assets.xml" />
+  </asset>
+
+
+
+  <worldbody>
+
+    <body name="f1_block_1" pos="0.8 0.37537452 0.10" quat="0.5 -0.5 -0.5 0.5 ">
+        <joint name="f1_block_free_joint" type="free"/>
+        <inertial mass="1" pos="0.075 0.01 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+        <geom mesh="block_1" rgba="0.04969316144991731 0.9374098074264089 0.7663034449013295 1" class="f_block_visual"/>
+        <geom mesh="block_1_collision_0" rgba="0.04969316144991731 0.9374098074264089 0.7663034449013295 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_1" rgba="0.743716093669547 0.2316001065007981 0.9216810209632792 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_2" rgba="0.8378644262541036 0.0631595487671266 0.5772883119243784 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_3" rgba="0.55182267776058 0.49627483813619744 0.5924762856545812 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_4" rgba="0.7660553621142147 0.7138605078375927 0.4267323037349189 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_5" rgba="0.8082572375455168 0.10578399965795815 0.1920330598775094 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_6" rgba="0.4843090859794702 0.9800503009733361 0.6965162653666385 1" class="f_block_collision"/>
+        <geom mesh="block_1_collision_7" rgba="0.13950328260310574 0.578697257060118 0.23151833578383885 1" class="f_block_collision"/>
+
+          <body name="f1_block_2" pos="0 0.042828 -0.150" quat=" 0 1 0 0">
+              <inertial mass="1" pos="0.075 0.01 -0.075" diaginertia="0.0102675 0.0102675 0.00666"/>
+              <joint name="f_block_1_joint_1" pos="0.151414 0.021414 0" axis="0 0 1"  damping="0.0" range="0 3.1415"/>
+              <geom mesh="block_2" rgba="0.9278748131857267 0.9750400105728048 0.011301633201228567 1" class="f_block_visual"/>
+              <geom mesh="block_2_collision_0" rgba="0.9278748131857267 0.9750400105728048 0.011301633201228567 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_1" rgba="0.33375377122351035 0.7268079274682246 0.33978252710309587 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_2" rgba="0.6440924342090338 0.9742451184719949 0.5798394669977455 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_3" rgba="0.5669656578747101 0.1654589238177271 0.041036840593084545 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_4" rgba="0.9684390604777308 0.5921099450743562 0.917463620984305 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_5" rgba="0.6724673830008813 0.1950970263357703 0.008809823749446277 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_6" rgba="0.8518830306097929 0.06563841754600352 0.8354793984662352 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_7" rgba="0.8112231977741263 0.88752123124642 0.818457463422128 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_8" rgba="0.7255226473485543 0.15282364594796738 0.41489331031318155 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_9" rgba="0.026777736072874703 0.3940134822219922 0.9963385073324219 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_10" rgba="0.7904621726106753 0.21060817855837755 0.3494399014909447 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_11" rgba="0.8407632955708272 0.6188891906362596 0.2210174511930707 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_12" rgba="0.6923367431980892 0.9175424833753784 0.7976016315359191 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_13" rgba="0.3094059396799437 0.3662935882928817 0.9658657212785459 1" class="f_block_collision"/>
+              <geom mesh="block_2_collision_14" rgba="0.761795301723771 0.604652410455299 0.30989459151604026 1" class="f_block_collision"/>
+          </body>
+
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- actuators for position control -->
+    <!-- <include file="../assets/foldable_block_1/actuator_position.xml"/> -->
+
+    <!-- actuators for velocity control -->
+    <!-- <include file="../assets/universal_robots_ur5e/actuator_velocity.xml"/> -->
+
+    <!-- actuators for torque control -->
+    <!-- <include file="../assets/universal_robots_ur5e/actuator_motor.xml"/> -->
+
+  </actuator>
+
+
+  
+</mujoco>

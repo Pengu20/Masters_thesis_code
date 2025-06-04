@@ -1,0 +1,29 @@
+<mujoco model="empty scene">
+  <visual>
+    <global azimuth="120" elevation="-20"/>
+    <headlight ambient="0.10000000000000001 0.10000000000000001 0.10000000000000001" diffuse="0.59999999999999998 0.59999999999999998 0.59999999999999998" specular="0 0 0"/>
+    <rgba haze="0.14999999999999999 0.25 0.34999999999999998 1"/>
+  </visual>
+  <statistic meansize="0.080000000000000002" extent="1.2" center="0.29999999999999999 0 0.29999999999999999"/>
+  <extension>
+    <plugin plugin="mujoco.sensor.touch_grid"/>
+    <plugin plugin="mujoco.elasticity.shell"/>
+  </extension>
+  <custom>
+    <numeric name="max_contact_points" data="15"/>
+    <numeric name="max_geom_pairs" data="15"/>
+  </custom>
+  <asset>
+    <texture name="unnamed_texture_0" type="skybox" builtin="gradient" rgb1="0.29999999999999999 0.5 0.69999999999999996" rgb2="0 0 0" width="512" height="3072"/>
+    <material name="cloth_material" specular="1" shininess="1"/>
+  </asset>
+
+
+  <worldbody>
+    <composite prefix="unnamed_composite_0" type="grid" count="9 9 1" spacing="0.05000000000000000" offset="0.8 0.5 0.5">
+      <joint kind="main" damping="0.05"/>
+      <geom size="0.001" mass='0.01' group="2" friction="0.2 0.005 0.0001"/>
+      <skin texcoord="true" material="cloth_material" inflate="0.001" subgrid="3"/>
+    </composite>
+  </worldbody>
+</mujoco>
