@@ -37,16 +37,16 @@ This repository also consists of expert demonstrations and MuJoCo environments f
 - next state
 
 1 DOF - underactuated manipulation expert demonstration
-[![download video]](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/F1_expert.mp4)
+[download video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/F1_expert.mp4)
 
 2 DOF - underactuated manipulation expert demonstration
-[![download video]](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/F2_expert.mp4)
+[download video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/F2_expert.mp4)
 
 4 DOF - underactuated manipulation expert demonstration
-[![download video]](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/F3_expert.mp4)
+[download video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/F3_expert.mp4)
 
 cloth manipulation expert demonstration
-[![download video]](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/cloth_expert.mp4)
+[download video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/cloth_expert.mp4)
 
 
 # Code sources
