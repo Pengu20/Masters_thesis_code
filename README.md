@@ -6,6 +6,8 @@ This is a cleaned version of the code used for my masters thesis project on Adve
 
 ### setup virtual environment (optional)
 $ python -m venv venv
+$ source venv/bin/activate
+
 
 ### install requirements
 $ pip install -r requirements.txt
