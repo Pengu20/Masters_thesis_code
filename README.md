@@ -49,6 +49,10 @@ cloth manipulation expert demonstration
 [download video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/Expert_demonstrations/mp4/cloth_expert.mp4)
 
 
+Reward-injected state-only AIRL policy
+[download video](https://raw.githubusercontent.com/Pengu20/Masters_thesis_code/main/mj_sim/learned_policies/mp4/C1_reward_injected_AIRL_policy.mp4)
+
+
 # Code sources
 - Mujoco environment design
 https://gitlab.sdu.dk/sdurobotics/teaching/mj_sim
